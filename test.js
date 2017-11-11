@@ -1,7 +1,25 @@
 const selectionSort = require('./src/sort/selection-sort')
     , bubbleSort = require('./src/sort/bubble-sort')
     , insertionSort = require('./src/sort/insertion-sort')
-    , arr = [4, 5,3, 5,8,90,2323,33]
+    , shellSort = require('./src/sort/shell-sort')
+function getRandomArray(len) {
+    const arr = new Array(len)
+    for (let i = 0;i < len;i++) {
+        arr[i] = Math.floor(Math.random()*len)
+    }
+    return arr
+}
+const arr = getRandomArray(1000)
+function runSortAndShowTime(func, arr) {
+    let res
+        , startTime = new Date().getTime()
+    res = func(arr)
+    let endTime = new Date().getTime()
+    console.log(endTime-startTime+'ms')
+    return res
+}
 
-
-console.log(bubbleSort(arr), selectionSort(arr), insertionSort(arr))
+runSortAndShowTime(bubbleSort, arr)
+runSortAndShowTime(selectionSort, arr)
+runSortAndShowTime(insertionSort, arr)
+runSortAndShowTime(shellSort, arr)
