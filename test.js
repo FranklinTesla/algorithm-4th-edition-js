@@ -2,6 +2,7 @@ const selectionSort = require('./src/sort/selection-sort')
     , bubbleSort = require('./src/sort/bubble-sort')
     , insertionSort = require('./src/sort/insertion-sort')
     , shellSort = require('./src/sort/shell-sort')
+    , mergeSort1 = require('./src/sort/merge-sort-1')
 function getRandomArray(len) {
     const arr = new Array(len)
     for (let i = 0;i < len;i++) {
@@ -23,3 +24,4 @@ runSortAndShowTime(bubbleSort, arr)
 runSortAndShowTime(selectionSort, arr)
 runSortAndShowTime(insertionSort, arr)
 runSortAndShowTime(shellSort, arr)
+runSortAndShowTime(mergeSort1, arr)
