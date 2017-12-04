@@ -1,9 +1,9 @@
-const selectionSort = require('./src/sort/selection-sort')
-    , bubbleSort = require('./src/sort/bubble-sort')
-    , insertionSort = require('./src/sort/insertion-sort')
-    , shellSort = require('./src/sort/shell-sort')
-    , mergeSort1 = require('./src/sort/mergeSort/top2low')
-    , mergeSort2 = require('./src/sort/mergeSort/low2top')
+const selectionSort = require('./selection-sort')
+    , bubbleSort = require('./bubble-sort')
+    , insertionSort = require('./insertion-sort')
+    , shellSort = require('./shell-sort')
+    , mergeSort1 = require('./mergeSort/top2low')
+    , mergeSort2 = require('./mergeSort/low2top')
 function getRandomArray(len) {
     const arr = new Array(len)
     for (let i = 0;i < len;i++) {
