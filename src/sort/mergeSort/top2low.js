@@ -6,7 +6,7 @@ const merge = require('./merge')
 function sort(arr, lo = 0, hi = arr.length - 1) {
     let temp = [...arr]
     const mid = lo + Math.floor((hi - lo) / 2)
-    if (hi <= lo || temp[mid] <= temp[mid + 1]) {
+    if (hi <= lo) {
         return temp
     }
     temp = sort(temp, lo, mid)

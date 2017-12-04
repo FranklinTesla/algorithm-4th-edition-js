@@ -3,9 +3,9 @@
  * @type {*|(function(): result)}
  */
 const merge = require('./merge')
-function sort(arr, size = 2) {
-    if (size >= arr.length) {
-        return arr
+function sort(arr, size = 1) {
+    if (size > arr.length) {
+        return merge(arr, 0, Math.floor(arr.length / 2), arr.length - 1)
     }
     let result = []
     for (let i = 0, len = arr.length;i < len;i += size) {
