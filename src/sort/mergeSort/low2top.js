@@ -3,17 +3,15 @@
  * @type {*|(function(): result)}
  */
 const merge = require('./merge')
-function sort(arr, size = 1) {
-    if (size > arr.length) {
-        return merge(arr, 0, Math.floor(arr.length / 2), arr.length - 1)
+function sort(arr) {
+    let N = arr.length
+        , result = [...arr]
+    for (let size = 1;size < N;size *= 2) {
+        let step = 2 * size
+        for (let lo = 0;lo < N - size;lo += step) {
+            result = merge(result, lo, lo + size - 1, Math.min(lo + step - 1, N - 1))
+        }
     }
-    let result = []
-    for (let i = 0, len = arr.length;i < len;i += size) {
-        let temp = arr.slice(i, i + size)
-            , len = temp.length
-        temp = merge(temp, 0, Math.floor(len / 2), len - 1)
-        result = result.concat(temp)
-    }
-    return sort(result, 2 * size)
+    return result
 }
 module.exports = sort

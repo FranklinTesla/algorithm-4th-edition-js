@@ -1,13 +1,14 @@
 function sort(arr) {
-    for (let i = 0, len = arr.length;i < len;i++) {
-        for (let j = i + 1, len = arr.length;j < len;j++) {
-            if (arr[i] < arr[j]) {
-                let temp = arr[i]
-                arr[i] = arr[j]
-                arr[j] = temp
+    const result = [...arr]
+    for (let i = 0, len = result.length;i < len;i++) {
+        for (let j = i + 1, len = result.length;j < len;j++) {
+            if (result[i] < result[j]) {
+                let temp = result[i]
+                result[i] = result[j]
+                result[j] = temp
             }
         }
     }
-    return arr
+    return result
 }
 module.exports = sort

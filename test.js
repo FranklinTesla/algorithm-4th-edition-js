@@ -11,7 +11,7 @@ function getRandomArray(len) {
     }
     return arr
 }
-const arr = getRandomArray(20)
+const arr = getRandomArray(1000)
 function runSortAndShowTime(func, arr) {
     let res
         , startTime = new Date().getTime()
@@ -21,10 +21,9 @@ function runSortAndShowTime(func, arr) {
     return res
 }
 
-// runSortAndShowTime(bubbleSort, arr)
-// runSortAndShowTime(selectionSort, arr)
-// runSortAndShowTime(insertionSort, arr)
-// runSortAndShowTime(shellSort, arr)
-// runSortAndShowTime(mergeSort3, arr)
-console.log(runSortAndShowTime(mergeSort1, arr))
-// runSortAndShowTime(mergeSort1, arr)
+runSortAndShowTime(bubbleSort, arr)
+runSortAndShowTime(selectionSort, arr)
+runSortAndShowTime(insertionSort, arr)
+runSortAndShowTime(shellSort, arr)
+runSortAndShowTime(mergeSort1, arr)
+runSortAndShowTime(mergeSort2, arr)

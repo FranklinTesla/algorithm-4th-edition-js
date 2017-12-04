@@ -4,8 +4,9 @@
  * @returns {*}
  */
 function sort(arr) {
+    const result = [...arr]
     let h = 1
-        , len = arr.length
+        , len = result.length
         , hi = len / 3
     while (h < hi) {
         h = 3 * h + 1
@@ -13,15 +14,15 @@ function sort(arr) {
     while (h >= 1) {
         for (let i = h;i < len;i++) {
             for (let j = i;j >= h;j -= h) {
-                if (arr[j] > arr[j - h]) {
-                    const temp = arr[j]
-                    arr[j] = arr[j - 1]
-                    arr[j - 1] = temp
+                if (result[j] > result[j - h]) {
+                    const temp = result[j]
+                    result[j] = result[j - 1]
+                    result[j - 1] = temp
                 }
             }
         }
         h = Math.floor(h / 3)
     }
-    return arr
+    return result
 }
 module.exports = sort
