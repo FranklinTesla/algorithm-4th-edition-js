@@ -4,6 +4,7 @@ const selectionSort = require('./selection-sort')
     , shellSort = require('./shell-sort')
     , mergeSort1 = require('./mergeSort/top2low')
     , mergeSort2 = require('./mergeSort/low2top')
+    , quickSort = require('./quickSort/quickSort')
 function getRandomArray(len) {
     const arr = new Array(len)
     for (let i = 0;i < len;i++) {
@@ -11,7 +12,7 @@ function getRandomArray(len) {
     }
     return arr
 }
-const arr = getRandomArray(1000)
+const arr = getRandomArray(20)
 function runSortAndShowTime(func, arr) {
     let res
         , startTime = new Date().getTime()
@@ -21,9 +22,11 @@ function runSortAndShowTime(func, arr) {
     return res
 }
 
-runSortAndShowTime(bubbleSort, arr)
-runSortAndShowTime(selectionSort, arr)
-runSortAndShowTime(insertionSort, arr)
-runSortAndShowTime(shellSort, arr)
-runSortAndShowTime(mergeSort1, arr)
-runSortAndShowTime(mergeSort2, arr)
+// runSortAndShowTime(bubbleSort, arr)
+// runSortAndShowTime(selectionSort, arr)
+// runSortAndShowTime(insertionSort, arr)
+// runSortAndShowTime(shellSort, arr)
+// runSortAndShowTime(mergeSort1, arr)
+// runSortAndShowTime(mergeSort2, arr)
+console.log(`${arr}\n`)
+console.log(quickSort(arr))
