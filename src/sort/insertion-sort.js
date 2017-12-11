@@ -1,11 +1,10 @@
+const exch = require('./exchange')
 function sort(arr) {
-    const result = [...arr]
+    let result = [...arr]
     for (let i = 1, len = result.length;i < len;i++) {
         for (let j = i;j > 0;j--) {
             if (result[j - 1] < result[j]) {
-                let temp = result[j - 1]
-                result[j - 1] = result[j]
-                result[j] = temp
+                result = exch(result, j - 1, j)
             }
         }
     }

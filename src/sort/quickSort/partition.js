@@ -1,5 +1,6 @@
+const exchange = require('../exchange')
 module.exports = function (arr, lo, hi) {
-    const result = [...arr]
+    let result = [...arr]
     let v = result[lo]
         , j = hi + 1
         , i = lo
@@ -17,12 +18,8 @@ module.exports = function (arr, lo, hi) {
         if (i >= j) {
             break
         }
-        const temp = result[j]
-        result[j] = result[i]
-        result[i] = temp
+        result = exchange(result, i, j)
     }
-    const temp = result[lo]
-    result[lo] = result[j]
-    result[j] = temp
+    result = exchange(result, lo, j)
     return {result, j}
 }

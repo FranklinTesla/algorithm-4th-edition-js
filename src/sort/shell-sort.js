@@ -1,10 +1,11 @@
+const exch = require('./exchange')
 /**
  * 在js中可能由于计算h的问题，希尔排序反而更耗时间
  * @param arr
  * @returns {*}
  */
 function sort(arr) {
-    const result = [...arr]
+    let result = [...arr]
     let h = 1
         , len = result.length
         , hi = len / 3
@@ -15,9 +16,7 @@ function sort(arr) {
         for (let i = h;i < len;i++) {
             for (let j = i;j >= h;j -= h) {
                 if (result[j] > result[j - h]) {
-                    const temp = result[j]
-                    result[j] = result[j - 1]
-                    result[j - 1] = temp
+                    result = exch(result, j, j - 1)
                 }
             }
         }
