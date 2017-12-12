@@ -5,16 +5,8 @@ module.exports = function (arr, lo, hi) {
         , j = hi + 1
         , i = lo
     while (true) {
-        while (result[++i] > v) {
-            if (i === hi) {
-                break
-            }
-        }
-        while (result[--j] < v) {
-            if (j === lo) {
-                break
-            }
-        }
+        while (result[++i] > v) {}
+        while (result[--j] < v) {}
         if (i >= j) {
             break
         }
